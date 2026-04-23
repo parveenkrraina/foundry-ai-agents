@@ -33,7 +33,6 @@ async def connect_to_server(exit_stack: AsyncExitStack):
     stdio, write = stdio_transport
 
     # Create an MCP client session
-   # Create an MCP client session
     session = await exit_stack.enter_async_context(ClientSession(stdio, write))
     await session.initialize() 
 
@@ -71,7 +70,6 @@ async def chat_loop(session):
         # Store the functions in a dictionary for easy access when processing function calls
         functions_dict = {tool.name: make_tool_func(tool.name) for tool in tools}
 
-        # Create FunctionTool definitions for the agent
         # Create FunctionTool definitions for the agent
         mcp_function_tools: FunctionTool = []
         for tool in tools:

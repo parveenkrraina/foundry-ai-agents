@@ -1,8 +1,6 @@
 # Add references
-# Add references
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
 # Create an MCP server
 mcp = FastMCP(name="Inventory")
 
@@ -42,3 +40,5 @@ def get_weekly_sales() -> dict:
     }
 
 # Run the MCP server
+if __name__ == "__main__":
+    mcp.run()
